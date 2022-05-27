@@ -37,6 +37,14 @@ In this Git there's the code to make the arm work. This code is used in a Raspbe
 
 3. Move the cup to your hand using computer vision.
 
+# Electronic Components
+Raspberry Pi 4
+Micro servo SG90
+Adafruit Servo FeatherWing (16 channels PWM) 
+Servomotor 3001HB
+Webcam
+Power Supply Raspberry Pi 4, USB-C, 5.1V 3A
+
 
 # Hardware schematics
 That is our the hardware schematics of our robot but we use voice recognition too from a computer doing it with an app that is who controls what we order.
@@ -62,8 +70,11 @@ The module of voice recognition consits in using
 # 3D Pieces
 
 <img width="197" alt="image" src="https://user-images.githubusercontent.com/106244659/170775776-4c2a5e58-c742-41aa-97ed-563347825422.png">
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775591-072cf110-f8c0-493e-a6bf-280e57b068f7.png">
+
 <img width="536" alt="image" src="https://user-images.githubusercontent.com/106244659/170776014-36a1b147-d73f-4c8c-8cba-8bf5d9681690.png">
+
 <img width="563" alt="image" src="https://user-images.githubusercontent.com/106244659/170776139-843719ca-7420-4bfb-af77-6812d08d2c70.png">
 
 
