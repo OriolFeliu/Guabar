@@ -11,8 +11,8 @@ The smartbartender you need.
    * [Hardware Schematics](#hardware-schematics)
    * [Software Architecture](#software-architecture)
         * [Interactive App](#interactive-app)
-            * [Voice Recognition](#voice-recognition)
             * [Menu selector](#menu-selector)
+            * [Voice Recognition](#voice-recognition)
         * [Face Detection](#face-detection)
         * [Servo Movement](#servo-movement) 
    * [3D Pieces](#3d-pieces)
@@ -23,7 +23,7 @@ The smartbartender you need.
    
 # What is this?
 
-This proyect consists in make a robot with 100€ of budget. In this case using computer vision to do the movements of the robot.
+This project consists in make a robot with 100€ of budget. In this case, using computer vision to do the movements of the robot.
 
 # Description
 
@@ -50,29 +50,36 @@ Power Supply Raspberry Pi 4, USB-C, 5.1V 3A
 That is our the hardware schematics of our robot but we use voice recognition too from a computer doing it with an app that is who controls what we order.
 ![hardwareSchematics](https://user-images.githubusercontent.com/106244659/170773151-a1dbc667-78f6-4d93-a71c-11d20636b683.png)
 
-# Software Arquitecture
-We have some differents software modules:
+# Software Architecture
+We have some different software modules:
 <img width="258" alt="image" src="https://user-images.githubusercontent.com/106244659/170774332-21024a7d-4040-4f5a-a542-79ea23af9afb.png">
 
 ## Interactive App
-We create an interactive app to do the differents orders to the bartender.
-This is connected to the raspberry using ssh and we give the differents parameters to do what we want.
-
-### Voice Recognition
-The module of voice recognition consits in using 
+We create an interactive app to do the different orders to the bartender.
+This is connected to the raspberry using ssh and we give the different parameters to do what we want.
+To do that app we use flask. We use paramiko to create the ssh connection.
 
 ### Menu Selector
+To have a more than one option to ask for an order, we set a menu selector too on the app. Basically it gives you the pictures of the different drinks we have, and you just need to select the ones you want and submit the order
 
-## Face Detection
+### Voice Recognition
+The microphone provided to the raspberry to process the audio it takes to recognize the orders matching every word with a predefined ones, the different drinks available.
+
+We use speech_recognition  as a library to do the voice recognition program.
+
+## Face Detection 
+As the last module we take data from the web camera the robot it has on the top to process the video frames to detect faces, that faces are detected with the propose of let know the robot if the person is on the right or on the left to move it selves.
+
+We use the library cv2 to capture and process the camera images. And face_detection to do the face detection at the images.
 
 ## Servo Movement
+We defined a few functions that sets the different types of movements the robot have, one for open the hand, other for close it, etc.
 
 # 3D Pieces
-
 Gears:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775776-4c2a5e58-c742-41aa-97ed-563347825422.png">
 
-Horitzontal arm: that is what moves out.
+Horizontal arm: that is what moves out.
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775591-072cf110-f8c0-493e-a6bf-280e57b068f7.png">
 
 Hand of the robot
@@ -89,10 +96,23 @@ You can order to him in 2 different ways, the first one consist in select the or
 Guabar-Forever track your face to recognize where you are and serves the drink as near as possible to you.
 
 # Bibliography
+This project has been inspired by the following project:
+https://www.hackster.io/hackershack/smart-bartender-5c430e
+
+Information to know how to do the project:
+https://learn.adafruit.com/16-channel-pwm-servo-driver
+https://pypi.org/project/face-detection/
+https://opencv.org/releases/
+https://pypi.org/project/SpeechRecognition/
+https://www.paramiko.org/
+https://flask.palletsprojects.com/en/2.1.x/
+https://www.raspberrypi.com/documentation/
+
 
 # Authors
-Oriol Feliu Juarez
-Ivan Cañas Martin
+Oriol Feliu Juarez,
+Ivan Cañas Martin,
 Oscar Moreno Ramos
+
 # Video
 Coming soon
