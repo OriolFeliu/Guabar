@@ -1,0 +1,14 @@
+head, body{
+    font-family: "Montserrat";
+    background: #94daff;
+    text-align: center;
+    margin-top: 2em;
+}
+button{
+    background-color: white;
+    font-family: "Montserrat";
+}
+img{
+    width: auto;
+    height: 5em;
+}
