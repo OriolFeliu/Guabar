@@ -76,6 +76,8 @@ Guabar-Forever track your face to recognize where you are and serves the drink a
 # Bibliography
 
 # Authors
-
+Oriol Feliu Juarez
+Ivan Cañas Martin
+Oscar Moreno Ramos
 # Video
 Coming soon
