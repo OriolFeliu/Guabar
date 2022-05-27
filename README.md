@@ -6,74 +6,24 @@ The smartbartender you need.
 
 # Table of Contents
    * [What is this?](#what-is-this)
-   * [Requirements](#requirements)
-   * [Documentation](#documentation)
-   * [How to use](#how-to-use)
-   * [Localization](#localization)
-      * [Extended Kalman Filter localization](#extended-kalman-filter-localization)
-      * [Particle filter localization](#particle-filter-localization)
-      * [Histogram filter localization](#histogram-filter-localization)
-   * [Mapping](#mapping)
-      * [Gaussian grid map](#gaussian-grid-map)
-      * [Ray casting grid map](#ray-casting-grid-map)
-      * [Lidar to grid map](#lidar-to-grid-map)
-      * [k-means object clustering](#k-means-object-clustering)
-      * [Rectangle fitting](#rectangle-fitting)
-   * [SLAM](#slam)
-      * [Iterative Closest Point (ICP) Matching](#iterative-closest-point-icp-matching)
-      * [FastSLAM 1.0](#fastslam-10)
-   * [Path Planning](#path-planning)
-      * [Dynamic Window Approach](#dynamic-window-approach)
-      * [Grid based search](#grid-based-search)
-         * [Dijkstra algorithm](#dijkstra-algorithm)
-         * [A* algorithm](#a-algorithm)
-         * [D* algorithm](#d-algorithm)
-         * [D* Lite algorithm](#d-lite-algorithm)
-         * [Potential Field algorithm](#potential-field-algorithm)
-         * [Grid based coverage path planning](#grid-based-coverage-path-planning)
-      * [State Lattice Planning](#state-lattice-planning)
-         * [Biased polar sampling](#biased-polar-sampling)
-         * [Lane sampling](#lane-sampling)
-      * [Probabilistic Road-Map (PRM) planning](#probabilistic-road-map-prm-planning)
-      * [Rapidly-Exploring Random Trees (RRT)](#rapidly-exploring-random-trees-rrt)
-         * [RRT*](#rrt)
-         * [RRT* with reeds-shepp path](#rrt-with-reeds-shepp-path)
-         * [LQR-RRT*](#lqr-rrt)
-      * [Quintic polynomials planning](#quintic-polynomials-planning)
-      * [Reeds Shepp planning](#reeds-shepp-planning)
-      * [LQR based path planning](#lqr-based-path-planning)
-      * [Optimal Trajectory in a Frenet Frame](#optimal-trajectory-in-a-frenet-frame)
-   * [Path Tracking](#path-tracking)
-      * [move to a pose control](#move-to-a-pose-control)
-      * [Stanley control](#stanley-control)
-      * [Rear wheel feedback control](#rear-wheel-feedback-control)
-      * [Linear–quadratic regulator (LQR) speed and steering control](#linearquadratic-regulator-lqr-speed-and-steering-control)
-      * [Model predictive speed and steering control](#model-predictive-speed-and-steering-control)
-      * [Nonlinear Model predictive control with C-GMRES](#nonlinear-model-predictive-control-with-c-gmres)
-   * [Arm Navigation](#arm-navigation)
-      * [N joint arm to point control](#n-joint-arm-to-point-control)
-      * [Arm navigation with obstacle avoidance](#arm-navigation-with-obstacle-avoidance)
-   * [Aerial Navigation](#aerial-navigation)
-      * [drone 3d trajectory following](#drone-3d-trajectory-following)
-      * [rocket powered landing](#rocket-powered-landing)
-   * [Bipedal](#bipedal)
-      * [bipedal planner with inverted pendulum](#bipedal-planner-with-inverted-pendulum)
-   * [License](#license)
-   * [Use-case](#use-case)
-   * [Contribution](#contribution)
-   * [Citing](#citing)
-   * [Support](#support)
-   * [Sponsors](#Sponsors)
-      * [JetBrains](#JetBrains)
+   * [Description](#description)
+   * [Hardware Schematics](#hardware-schematics)
+   * [Software Architecture](#software-architecture)
+   * [3D Pieces](#3d-pieces)
+   * [Amazing-Contributions](#amazing-contributions)
+   * [Bibliography](#bibliography)
    * [Authors](#authors)
-
+   * [Video](#video)
+   
 # What is this?
+
+This proyect consists in make a robot with 100€ of budget. In this case using computer vision to do the movements of the robot.
+
+# Description
 
 Guabar is a robot arm that serves drinks. It has 3 joints and it is capable of grabbing a cup, put liquids in it and git it directly to your hand.
 
 In this Git there's the code to make the arm work. This code is used in a Raspberry Pi.
-
-Features:
 
 1. Grab cup.
 
@@ -81,70 +31,11 @@ Features:
 
 3. Move the cup to your hand using computer vision.
 
-See this paper for more details:
 
-- [\[1808\.10703\] PythonRobotics: a Python code collection of robotics algorithms](https://arxiv.org/abs/1808.10703) ([BibTeX](https://github.com/AtsushiSakai/PythonRoboticsPaper/blob/master/python_robotics.bib))
+# Hardware schematics
 
+![hardwareSchematics](https://user-images.githubusercontent.com/106244659/170773151-a1dbc667-78f6-4d93-a71c-11d20636b683.png)
 
-# Requirements
-
-For running each sample code:
-
-- [Python 3.10.x](https://www.python.org/)
- 
-- [NumPy](https://numpy.org/)
- 
-- [SciPy](https://scipy.org/)
- 
-- [Matplotlib](https://matplotlib.org/)
- 
-- [pandas](https://pandas.pydata.org/)
-
-- [cvxpy](https://www.cvxpy.org/) 
-
-For development:
-  
-- pytest (for unit tests)
-  
-- pytest-xdist (for parallel unit tests)
-  
-- mypy (for type check)
-  
-- sphinx (for document generation)
-  
-- pycodestyle (for code style check)
-
-# Documentation
-
-This README only shows some examples of this project. 
-
-If you are interested in other examples or mathematical backgrounds of each algorithm, 
-
-You can check the full documentation online: [Welcome to PythonRobotics’s documentation\! — PythonRobotics documentation](https://atsushisakai.github.io/PythonRobotics/index.html)
-
-All animation gifs are stored here: [AtsushiSakai/PythonRoboticsGifs: Animation gifs of PythonRobotics](https://github.com/AtsushiSakai/PythonRoboticsGifs)
-
-# How to use
-
-1. Clone this repo.
-
-> git clone https://github.com/OriolFeliu/Guabar.git
-
-
-2. Install the required libraries.
-
-using conda :
-
-> conda env create -f requirements/environment.yml
- 
-using pip :
-
-> pip install -r requirements/requirements.txt
-
-
-3. Execute python script in each directory.
-
-4. Add star to this repo if you like it :smiley:. 
 
 # Localization
 
@@ -605,18 +496,8 @@ Any contribution is welcome!!
 
 Please check this document:[How To Contribute — PythonRobotics documentation](https://atsushisakai.github.io/PythonRobotics/how_to_contribute.html)
 
-# Citing
+# bibliography
 
-If you use this project's code for your academic work, we encourage you to cite [our papers](https://arxiv.org/abs/1808.10703) 
 
-If you use this project's code in industry, we'd love to hear from you as well; feel free to reach out to the developers directly.
+# authors
 
-## Sponsors
-
-### [JetBrains](https://www.jetbrains.com/)
-
-They are providing a free license of their IDEs for this OSS development.   
-
-# Authors
-
-- [Contributors to Guabar](https://github.com/OriolFeliu/Guabar.git)
