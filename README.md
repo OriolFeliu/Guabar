@@ -23,44 +23,43 @@ The smartbartender you need.
    
 # What is this?
 
-This project consists in make a robot with 100€ of budget. In this case, using computer vision to do the movements of the robot.
+This project consists in a robot arm that makes you a drink using dispensing fountains. Through a camera, we use computer vision so the robot can recongize and grab the cup and give it directly to your hand.
+
+It's made from 3D printed components and uses Servo motors and a Raspberry Pi. The budget of this project is 100 €. 
 
 # Description
 
-Guabar is a robot arm that serves drinks. It has 3 joints and it is capable of grabbing a cup, put liquids in it and git it directly to your hand.
+The robot arm has 3 joints and it is capable of grabbing a cup, put liquids in it and git it directly to your hand.
 
-In this Git there's the code to make the arm work. This code is used in a Raspberry Pi.
+This Git contains the code to make the arm work using a Raspberry Pi.
 
+The robot can do the following things:
 1. Grab cup.
-
-2. Push the dispenser with the cup to put liquids in it.
-
-3. Move the cup to your hand using computer vision.
+2. Using a microphone, listen to the order by voice from the user.
+3. Push the dispenser with the cup to put liquids in it.
+4. Move the cup to your hand using computer vision.
 
 # Electronic Components
-Raspberry Pi 4
-Micro servo SG90
-Adafruit Servo FeatherWing (16 channels PWM) 
-Servomotor 3001HB
-Webcam
-Power Supply Raspberry Pi 4, USB-C, 5.1V 3A
-
+- Raspberry Pi 4
+- Micro servo SG90
+- Adafruit Servo FeatherWing (16 channels PWM) 
+- Servomotor 3001HB
+- Webcam
+- Power Supply Raspberry Pi 4, USB-C, 5.1V 3A
 
 # Hardware schematics
-That is our the hardware schematics of our robot but we use voice recognition too from a computer doing it with an app that is who controls what we order.
+The following figure is the hardware schematics of the robot. Also voice recognition is used from a computer through an app that controls what the user orders.
 ![hardwareSchematics](https://user-images.githubusercontent.com/106244659/170773151-a1dbc667-78f6-4d93-a71c-11d20636b683.png)
 
 # Software Architecture
-We have some different software modules:
+We have different software modules:
 <img width="258" alt="image" src="https://user-images.githubusercontent.com/106244659/170774332-21024a7d-4040-4f5a-a542-79ea23af9afb.png">
 
 ## Interactive App
-We create an interactive app to do the different orders to the bartender.
-This is connected to the raspberry using ssh and we give the different parameters to do what we want.
-To do that app we use flask. We use paramiko to create the ssh connection.
+We have created an interactive web app to place the different orders to the bartender robot. It is connected to the Raspberry using SSH and different parameters are used to accomplish the desired actions. This app is developed in Flask and Paramiko is used to create the SSH connection. 
 
 ### Menu Selector
-To have a more than one option to ask for an order, we set a menu selector too on the app. Basically it gives you the pictures of the different drinks we have, and you just need to select the ones you want and submit the order
+To have a more than one option to ask for an order, we have created a menu selector on the app. Basically, it gives you the pictures of the different available drinks and you just need to select the ones you want and submit the order.
 
 ### Voice Recognition
 The microphone provided to the raspberry to process the audio it takes to recognize the orders matching every word with a predefined ones, the different drinks available.
