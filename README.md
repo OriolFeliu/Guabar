@@ -80,15 +80,19 @@ A few functions have been created to set the different types of movements the ro
 
 # 3D Pieces
 Gears:
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775776-4c2a5e58-c742-41aa-97ed-563347825422.png">
 
 Horizontal arm:
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775591-072cf110-f8c0-493e-a6bf-280e57b068f7.png">
 
 Hand of the robot:
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170776014-36a1b147-d73f-4c8c-8cba-8bf5d9681690.png">
 
 Structural arm:
+
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170776139-843719ca-7420-4bfb-af77-6812d08d2c70.png">
 
 
