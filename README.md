@@ -117,9 +117,9 @@ https://www.raspberrypi.com/documentation/
 
 
 # Authors
-Oriol Feliu Juarez,
-Ivan Cañas Martin,
-Oscar Moreno Ramos
+- Oriol Feliu Juárez
+- Ivan Cañas Martin
+- Oscar Moreno Ramos
 
 - [Contributors to Guabar](https://github.com/OriolFeliu/Guabar/graphs/contributors)
 
