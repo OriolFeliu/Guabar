@@ -23,7 +23,7 @@ The smartbartender you need.
    
 # What is this?
 
-This project consists in a robot arm that makes you a drink using dispensing fountains. Through a camera, we use computer vision so the robot can recongize and grab the cup and give it directly to your hand.
+This project consists in a robot arm that makes drinks using dispensing fountains. Through a camera, computer vision is used so the robot can recongize and grab the cup and give it directly to your hand.
 
 It's made from 3D printed components and uses Servo motors and a Raspberry Pi. The budget of this project is 100 €. 
 
@@ -48,51 +48,59 @@ The robot can do the following things:
 - Power Supply Raspberry Pi 4, USB-C, 5.1V 3A
 
 # Hardware schematics
-The following figure is the hardware schematics of the robot. Also voice recognition is used from a computer through an app that controls what the user orders.
+The following figure is the hardware schematics of the robot. Also, voice recognition is used from a computer through an app that controls what the user orders.
+
 ![hardwareSchematics](https://user-images.githubusercontent.com/106244659/170773151-a1dbc667-78f6-4d93-a71c-11d20636b683.png)
 
 # Software Architecture
-We have different software modules:
+The following image shows different software module:
+
 <img width="258" alt="image" src="https://user-images.githubusercontent.com/106244659/170774332-21024a7d-4040-4f5a-a542-79ea23af9afb.png">
 
 ## Interactive App
-We have created an interactive web app to place the different orders to the bartender robot. It is connected to the Raspberry using SSH and different parameters are used to accomplish the desired actions. This app is developed in Flask and Paramiko is used to create the SSH connection. 
+An interactive web app has been created to place the different orders to the bartender robot. It is connected to the Raspberry using SSH and different parameters are used to accomplish the desired actions. This app is developed in Flask and Paramiko is used to create the SSH connection. 
 
 ### Menu Selector
-To have a more than one option to ask for an order, we have created a menu selector on the app. Basically, it gives you the pictures of the different available drinks and you just need to select the ones you want and submit the order.
+To have a more than one option to ask for an order, a menu selector appears in the app. Basically, it gives the user pictures of the different available drinks and is just required to select the ones that wants and submit the order.
 
 ### Voice Recognition
-The microphone provided to the raspberry to process the audio it takes to recognize the orders matching every word with a predefined ones, the different drinks available.
+A external microphone is required to use voice recognition, in our case, we use the microphone integrated in our computers. 
 
-We use speech_recognition  as a library to do the voice recognition program.
+The code matches the voice orders with predefined ones, if it doesn't find any match, the program will respond that it didn't understand the order. It will also recognize the different requested available drinks.
 
-## Face Detection 
-As the last module we take data from the web camera the robot it has on the top to process the video frames to detect faces, that faces are detected with the propose of let know the robot if the person is on the right or on the left to move it selves.
+The speech_recognition library is used to do the voice recognition sub-program.
 
-We use the library cv2 to capture and process the camera images. And face_detection to do the face detection at the images.
+## Face Detection
+For the last module, data is taken through an external camera placed on top of the robot to process so it can detect faces, the robot arm will move right or left depending on where the person is standing.
+
+The cv2 library is used to capture and process the camera images. The face_detection library is used to do the face detection at the frames taken from the camera.
 
 ## Servo Movement
-We defined a few functions that sets the different types of movements the robot have, one for open the hand, other for close it, etc.
+A few functions have been created to set the different types of movements the robot can do, like opening or closing its hand, moving the hand to the desired position, etc.
 
 # 3D Pieces
 Gears:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775776-4c2a5e58-c742-41aa-97ed-563347825422.png">
 
-Horizontal arm: that is what moves out.
+Horizontal arm:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170775591-072cf110-f8c0-493e-a6bf-280e57b068f7.png">
 
-Hand of the robot
+Hand of the robot:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170776014-36a1b147-d73f-4c8c-8cba-8bf5d9681690.png">
 
-Structural arm
+Structural arm:
 <img width="340" alt="image" src="https://user-images.githubusercontent.com/106244659/170776139-843719ca-7420-4bfb-af77-6812d08d2c70.png">
 
 
 # Amazing contributions
 
-A robot that acts as a bartender, just speak with him as confident as you can. You won’t notice that is a robot, it will be your friend.
-You can order to him in 2 different ways, the first one consist in select the order with a menu in app and the other consists in order by the voice as if you are talking with a bartender.
-Guabar-Forever track your face to recognize where you are and serves the drink as near as possible to you.
+A robot that acts as a bartender, just speak with him as confident as you can. You won’t notice that it is a robot, it will be your server.
+
+You can order to him in 2 different ways:
+- Select the order through the menu found in the web app.
+- Order using your voice as if you were talking with a real bartender.
+
+Guabar-Forever tracks your face to recognize where you are and serves the drink as near as possible to you.
 
 # Bibliography
 This project has been inspired by the following project:
@@ -112,6 +120,8 @@ https://www.raspberrypi.com/documentation/
 Oriol Feliu Juarez,
 Ivan Cañas Martin,
 Oscar Moreno Ramos
+
+- [Contributors to AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics/graphs/contributors)
 
 # Video
 Coming soon
