@@ -121,7 +121,7 @@ Oriol Feliu Juarez,
 Ivan Cañas Martin,
 Oscar Moreno Ramos
 
-- [Contributors to AtsushiSakai/PythonRobotics](https://github.com/AtsushiSakai/PythonRobotics/graphs/contributors)
+- [Contributors to Guabar](https://github.com/OriolFeliu/Guabar/graphs/contributors)
 
 # Video
 Coming soon
