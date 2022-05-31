@@ -1,5 +1,5 @@
 <img src="https://user-images.githubusercontent.com/75795918/171119206-32c3f115-870f-4684-b0c8-a5ca76ed17ef.png" align="right" width="300" alt="header pic"/>
-<img src="https://user-images.githubusercontent.com/106244659/170769917-426e1645-2c16-4824-b882-c759c457b869.jpg" align="right" width="300" alt="header pic"/>
+<! -- <img src="https://user-images.githubusercontent.com/106244659/170769917-426e1645-2c16-4824-b882-c759c457b869.jpg" align="right" width="300" alt="header pic"/> -->
 
 
 # Guabar-Forever
