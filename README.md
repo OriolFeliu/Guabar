@@ -1,5 +1,6 @@
+<img src="https://user-images.githubusercontent.com/106244659/170769917-426e1645-2c16-4824-b882-c759c457b869.jpg" align="right" width="300" alt="header pic"/>
+
 <img src="https://user-images.githubusercontent.com/75795918/171119206-32c3f115-870f-4684-b0c8-a5ca76ed17ef.png" align="right" width="300" alt="header pic"/>
-<! -- <img src="https://user-images.githubusercontent.com/106244659/170769917-426e1645-2c16-4824-b882-c759c457b869.jpg" align="right" width="300" alt="header pic"/> -->
 
 
 # Guabar-Forever
@@ -130,4 +131,4 @@ https://www.raspberrypi.com/documentation/
 - [Contributors to Guabar](https://github.com/OriolFeliu/Guabar/graphs/contributors)
 
 # Video
-https://youtu.be/JFJbs6TrFEg
+[![Watch the video](https://user-images.githubusercontent.com/106244659/171213342-d61bac8d-70e4-4919-af44-c961b3effcbc.png)](https://youtu.be/JFJbs6TrFEg)
