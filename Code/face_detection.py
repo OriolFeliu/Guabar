@@ -3,6 +3,7 @@ import cv2
 import face_recognition
 from adafruit_servokit import ServoKit
 import sys
+import time
 
 
 class robot:
@@ -19,7 +20,10 @@ class robot:
 
 
     marge = 20
-
+    def __init__(self):
+        self.servo_base.angle=0
+        self.servo_arm=0
+        self.servo_hand=0
     #posicion de la cara respecto la camara
     def need_mov(self,w,locations):
         x = locations[3]+(locations[1]-locations[3])/2
@@ -32,10 +36,10 @@ class robot:
 
     #capar el movimiento de la base y guardar el angulo actual
     def move_base(self,angle):
-        if self.servo_base_angle + angle >=180:
+        if  angle >=180:
             self.servo_base_angle = 180
             self.servo_base.angle = self.servo_base_angle
-        elif self.servo_base_angle - angle <=0:
+        elif angle <=0:
             self.servo_base_angle = 0
             self.servo_base.angle = self.servo_base_angle
         else:
@@ -57,11 +61,12 @@ class robot:
 
     #cerrar mano
     def close_hand(self):
-        self.servo_hand.angle = 70
+        self.servo_hand.angle = 85
         self.hand_open = False
 
     #movimiento de la base hasta que este centrada con la cara
     def move_base_facedet(self, face_state):
+        time.sleep(2)
         if face_state == 'left':
             if (self.servo_base_angle + self.marge) <= 180:
                 self.servo_base_angle += self.marge
@@ -112,20 +117,29 @@ class robot:
         cv2.destroyAllWindows()
 
     def serve_order(self,ord_str):
-        self.open_hand()
         #coger baso vacio
         self.move_base(45)
+        time.sleep(2)
         self.open_arm()
+        time.sleep(2)
         self.close_hand()
+        time.sleep(2)
         self.close_arm()
+        time.sleep(2)
         #servir cada bebida pedida - grados predefinidos
         for order in ord_str.split(','):
             self.move_base(self.drinks[order])
+            time.sleep(2)
             self.open_arm()
+            time.sleep(2)
             self.close_arm()
+            time.sleep(2)
         self.move_base(0)
+        time.sleep(2)
         self.open_arm()
-        #detect_faces()
+        time.sleep(2)
+        detect_faces()
 
 rob = robot()
-rob.serve_order('ron,cola')
+time.sleep(2)
+rob.serve_order(sys.argv[1])
