@@ -3,8 +3,6 @@ import os
 from speech_rec import speech_rec
 from connection_test import connectionRasp
 
-ip_rasp = '192.168.1.145'
-
 app = Flask(__name__)
 
 #save order at app
@@ -12,7 +10,6 @@ app.order = False
 
 @app.route("/")
 def init():
-    CR = connectionRasp()
     return render_template("index2.html")
 
 @app.route('/echoTerm')
@@ -33,18 +30,21 @@ def listenOrder():
 def hand_sel():
     if request.method == 'POST':
         app.order = list(request.form.keys())[:-1]
+        CR = connectionRasp()
+        CR.comandSSH('python3 face_detection.py '+",".join(app.order))
         return render_template("select_result.html", order_str=", ".join(app.order))
     return render_template("hand_sel.html")
 
 @app.route("/voice_selection")
 def voice_sel():
     if app.order:
+        CR = connectionRasp()
+        CR.comandSSH('python3 face_detection.py '+",".join(app.order))
         return render_template("select_result.html", order_str=", ".join(app.order))
     return render_template("voice_sel.html")
 
 @app.route("/select_result")
 def select_result():
-    CR.comandSSH('comanda + app.order')
     return render_template("select_result.html", order_str=", ".join(app.order))
 
 if __name__ == "__main__":
